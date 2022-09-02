@@ -31,32 +31,30 @@ const TodoItem = (props) => {
     })
   };
   const CheckedItemHandler = (checkItem, findTitle) => {
-     store.filter((data) => {
+    store.filter((data) => {
       return data.title === findTitle;
     }).map((data) => {
       return data.completed = checkItem;
     })
-
-console.log(store)
+    console.log(store);
   }
-     // setStore((prevData) => {
+  // setStore((prevData) => {
   //   return [...prevData.map((data) => {
   //     return data.completed === checkItem;
   //   })
   //   ]
   // })
- 
-console.log(store);
-return (
-  <div>
-    <NewTodo onEnter={onEnteredItem} />
-    <ul>
-      <RenderItem todoList={store} updateStore={deleteEventItem} CheckedItem={CheckedItemHandler} />
-    </ul>
-    {store.length > 0 && <HandlerFooter todoList={store} />}
-    {store.length > 0 && <TodoFooter />}
 
-  </div>
-)
+  return (
+    <div>
+      <NewTodo onEnter={onEnteredItem} />
+      <ul>
+        <RenderItem todoList={store} updateStore={deleteEventItem} CheckedItem={CheckedItemHandler} />
+      </ul>
+      {store.length > 0 && <HandlerFooter todoList={store} />}
+      {store.length > 0 && <TodoFooter />}
+
+    </div>
+  )
 }
 export default TodoItem;

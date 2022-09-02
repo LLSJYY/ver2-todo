@@ -13,7 +13,6 @@ const RenderItem = (props) => {
     const checkItem = event.target.checked;
     const findTitle = event.target.closest('li').querySelector('span').innerHTML;
     props.CheckedItem(checkItem,findTitle)
-    console.log(checkItem,findTitle)
   };
    
   return (
